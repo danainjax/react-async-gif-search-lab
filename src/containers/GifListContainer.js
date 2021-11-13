@@ -14,7 +14,8 @@ export default class GifListContainer extends Component {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        const urls = data.data.map((object) => object.url)
+        console.log(data.data)
+        const urls = data.data.map((object) => object.images.original.url)
         this.setState({ gifs: urls })
       })
   }
